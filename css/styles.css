@@ -7,6 +7,7 @@
     --color-cornflower:#E7E9FC;
     --color-cloud:#F4F4FD;
     --color-ocean:#404BBF;
+    --tra: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list{
     list-style: none;
@@ -98,6 +99,10 @@ body{
     gap: 40px;
 }
 
+.header-link.current{
+    color: var(--color-ocean);
+}
+
 .current::after{
     position: absolute;
     left: 0;
@@ -111,6 +116,7 @@ body{
 }
 
 .header-link{
+    display: block;
     position: relative;
     font-weight: 500;
     font-size: 16px;
@@ -119,9 +125,7 @@ body{
     color: var(--color-navy-blue);
     padding-top: 24px;
     padding-bottom: 24px;
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--tra);
 }
 .header-link:hover {
     color:var(--color-ocean);
@@ -142,9 +146,7 @@ body{
     letter-spacing: 0.02em;
     padding-top: 24px;
     padding-bottom: 24px;
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--tra);
 }
 .header-contacts:hover{
     color: var(--color-ocean);
@@ -191,9 +193,7 @@ body{
     cursor: pointer;
     border-radius: 4px;
     border: inherit;
-    transition-property: background-color, box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--tra), box-shadow var(--tra);
 }
 .main-btn:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -305,9 +305,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: var(--color-iris);
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--tra);
 }
 .team-icons-link:hover,
 .team-icons-link:focus{
@@ -344,9 +342,7 @@ body{
     border: 1px solid var(--color-light-slate);
     border-radius: 4px;
     color: var(--color-light-slate);
-    transition-property: border-color, color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color var(--tra), color var(--tra);
 }
 
 .customers-icon{
@@ -410,9 +406,7 @@ body{
     align-items: center;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--tra);
 }
 .footer-icons-link:hover,
 .footer-icons-link:focus{
@@ -422,6 +416,7 @@ body{
 /*---------------   MODAL  ----------------- */
 
 .modal-bgd {
+    opacity: 1;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -429,12 +424,7 @@ body{
     left: 0;
     background-color: rgba(46, 47, 66, 0.4);
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition-property: opacity, visibility;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--tra), visibility var(--tra);
 }
 
 .modal-bgd.is-hidden .modal{
@@ -445,13 +435,12 @@ body{
     width: 408px;
     height: 576px;
     background-color: #FFFFFF;
-    z-index: 3;
     position: relative;
+    top: 50%;
+    left: 50%;
     border-radius: 4px;
-    transform: translate(-50% -50%) scaleY(1);
-    transition-property: translate, skaleY;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-50%, -50%) scaleY(1);
+    transition: transform var(--tra), skaleY var(--tra);
 }
 
 .close-button{
@@ -467,9 +456,8 @@ body{
     position: absolute;
     right: 24px;
     top: 24px;
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--tra);
+
 }
 
 .close-button:hover{
@@ -482,9 +470,7 @@ body{
 
 .close-button-icon{
     fill: #000000;
-    transition-property: fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill var(--tra);
 }
 
 .is-hidden{
@@ -511,9 +497,7 @@ body{
     border-radius: 4px;
     cursor: pointer;
     padding: 12px 24px;
-    transition-property: color, background-color, box-shadow, border-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--tra), background-color var(--tra), box-shadow var(--tra), border-color var(--tra);
 }
 .filter:hover,
 .filter:focus{
@@ -537,9 +521,7 @@ body{
 .project-link{
     display: inline-block;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-    transition-property: box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow var(--tra);
 }
 
 .project-link:hover,
